@@ -4,6 +4,11 @@ import reset from "styled-reset";
 export const colors = {
   point: "#ff6c6c",
 };
+
+export const spacing = {
+  side: "100px",
+};
+
 export const GlobalStyle = createGlobalStyle`
     ${reset}
 

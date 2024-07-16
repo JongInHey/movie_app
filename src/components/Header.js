@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
 import { routes } from "../routes";
 import styled from "styled-components";
-import { colors } from "../GlobalStyle";
+import { colors, spacing } from "../GlobalStyle";
 
 const Container = styled.header`
-  padding: 20px 100px;
+  padding: 20px ${spacing.side};
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 99;
   width: 100%;
 `;
 
