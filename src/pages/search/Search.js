@@ -1,3 +1,10 @@
+import { Title } from "../../components/Title";
+
 export const Search = () => {
-  return <div>Search</div>;
+  return (
+    <>
+      <Title titleName={"Search"} />
+      <div>Search</div>;
+    </>
+  );
 };
