@@ -19,12 +19,30 @@ const MovieTitle = styled.h3`
   margin-top: 20px;
 `;
 
+const params = {
+  slidesPerView: 7.4,
+  spaceBetween: 20,
+  breakpoints: {
+    1024: {
+      slidesPerView: 7.4,
+    },
+    640: {
+      slidesPerView: 5.3,
+      spaceBetween: 15,
+    },
+    320: {
+      slidesPerView: 3.3,
+      spaceBetween: 10,
+    },
+  },
+};
+
 export const Movies = ({ title, movieData }) => {
   return (
     <>
       <Section>
         <Title>{title}</Title>
-        <Swiper slidesPerView={7.4} spaceBetween={20}>
+        <Swiper {...params}>
           {movieData.map((data) => (
             <SwiperSlide key={data.id}>
               <Link to={`/detail/${data.id}`}>
