@@ -1,9 +1,9 @@
-import { Title } from "../components/Title";
+import { TopTitle } from "../components/TopTitle";
 
 export const PageNotFound = () => {
   return (
     <>
-      <Title titleName={"404PageNotFound"} />
+      <TopTitle titleName={"404PageNotFound"} />
       <div>PageNotFound</div>
     </>
   );

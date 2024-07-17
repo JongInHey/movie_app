@@ -1,9 +1,9 @@
-import { Title } from "../../components/Title";
+import { TopTitle } from "../../components/TopTitle";
 
 export const Search = () => {
   return (
     <>
-      <Title titleName={"Search"} />
+      <TopTitle titleName={"Search"} />
       <div>Search</div>;
     </>
   );

@@ -3,15 +3,17 @@ import { nowPlaying, popular, topRated, upcoming } from "../../api";
 import { Loading } from "../../components/Loading";
 import styled from "styled-components";
 import { spacing } from "../../GlobalStyle";
-import { ORIGIN_URL } from "../../constant/imgUrl";
-import { Title } from "../../components/Title";
+import { ORIGIN_URL, W500_URL } from "../../constant/imgUrl";
+import { TopTitle } from "../../components/TopTitle";
+import "swiper/css";
+import { Movies } from "./components/Movies";
 
 const MainBanner = styled.section`
   height: 80vh;
   background: url(${ORIGIN_URL}${(props) => props.$bgUrl}) no-repeat center /
     cover;
   padding: 400px ${spacing.side} 0 ${spacing.side};
-
+  position: relative;
   h3 {
     font-size: 80px;
     font-weight: 700;
@@ -21,8 +23,7 @@ const MainBanner = styled.section`
   }
 
   p {
-    max-width: 500px;
-    width: 100%;
+    width: 600px;
     font-size: 20px;
     line-height: 30px;
     opacity: 0.7;
@@ -37,6 +38,7 @@ const MainBanner = styled.section`
       margin-bottom: 15px;
     }
     p {
+      max-width: 500px;
       width: 100%;
       font-size: 14px;
       line-height: 20px;
@@ -95,12 +97,14 @@ export const Home = () => {
         <Loading />
       ) : (
         <>
-          <Title titleName={"Home"} />
+          <TopTitle titleName={"Home"} />
           <MainBanner $bgUrl={nowData[0].backdrop_path}>
             <BlackBg />
             <h3>{nowData[0].title}</h3>
             <p>{nowData[0].overview.slice(0, 100) + "..."}</p>
           </MainBanner>
+
+          <Movies nowData={nowData} />
         </>
       )}
     </>

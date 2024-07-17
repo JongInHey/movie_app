@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-export const Title = ({ titleName }) => {
+export const TopTitle = ({ titleName }) => {
   return (
     <Helmet>
       <title>MovieApp | {titleName}</title>

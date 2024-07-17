@@ -25,6 +25,11 @@ export const GlobalStyle = createGlobalStyle`
         word-break: keep-all;
     }
 
+    img {
+      width: 100%;
+      display: block;
+    }
+
     a {
         text-decoration: none;
         color: white;
