@@ -4,7 +4,7 @@ export const Search = () => {
   return (
     <>
       <TopTitle titleName={"Search"} />
-      <div>Search</div>;
+      <div>Search</div>
     </>
   );
 };

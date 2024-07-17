@@ -3,7 +3,7 @@ import { nowPlaying, popular, topRated, upcoming } from "../../api";
 import { Loading } from "../../components/Loading";
 import styled from "styled-components";
 import { spacing } from "../../GlobalStyle";
-import { ORIGIN_URL, W500_URL } from "../../constant/imgUrl";
+import { ORIGIN_URL } from "../../constant/imgUrl";
 import { TopTitle } from "../../components/TopTitle";
 import "swiper/css";
 import { Movies } from "./components/Movies";
@@ -87,7 +87,7 @@ export const Home = () => {
 
   console.log(nowData);
   // console.log(isLoading);
-  // console.log(`인기 영화 :  ${popData}`);
+  // console.log(popData);
   // console.log(`평점 좋음 :  ${topData}`);
   // console.log(`개봉 예정작 : ${upData}`);
 
@@ -104,7 +104,10 @@ export const Home = () => {
             <p>{nowData[0].overview.slice(0, 100) + "..."}</p>
           </MainBanner>
 
-          <Movies nowData={nowData} />
+          <Movies title={"현재 상영 영화"} movieData={nowData} />
+          <Movies title={"인기 영화"} movieData={popData} />
+          <Movies title={"최고 평점 영화"} movieData={topData} />
+          <Movies title={"개봉 예정 영화"} movieData={upData} />
         </>
       )}
     </>

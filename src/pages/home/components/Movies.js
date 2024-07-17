@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { spacing } from "../../../GlobalStyle";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { W500_URL } from "../../../constant/imgUrl";
-import { spacing } from "../../../GlobalStyle";
+import { Link } from "react-router-dom";
 
 const Section = styled.section`
-  padding: 100px 0 100px ${spacing.side};
+  padding: 100px 0 0 ${spacing.side};
 `;
 
 const Title = styled.h3`
@@ -19,13 +19,13 @@ const MovieTitle = styled.h3`
   margin-top: 20px;
 `;
 
-export const Movies = ({ nowData }) => {
+export const Movies = ({ title, movieData }) => {
   return (
     <>
       <Section>
-        <Title>현재 상영 영화</Title>
+        <Title>{title}</Title>
         <Swiper slidesPerView={7.4} spaceBetween={20}>
-          {nowData.map((data) => (
+          {movieData.map((data) => (
             <SwiperSlide key={data.id}>
               <Link to={`/detail/${data.id}`}>
                 <img src={`${W500_URL}${data.poster_path}`} alt={data.title} />
