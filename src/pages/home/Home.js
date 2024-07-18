@@ -39,11 +39,11 @@ export const Home = () => {
 
   return (
     <>
+      <TopTitle titleName={"Home"} />
       {isLoading ? (
         <Loading />
       ) : (
         <>
-          <TopTitle titleName={"Home"} />
           <MainBanner data={nowData[0]} />
 
           <Movies title={"현재 상영 영화"} movieData={nowData} />
