@@ -1,11 +1,15 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { spacing } from "../../../GlobalStyle";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { W500_URL } from "../../../constant/imgUrl";
-import { Link } from "react-router-dom";
 
 const Section = styled.section`
   padding: 100px 0 0 ${spacing.side};
+
+  @media screen and (max-width: 768px) {
+    padding: 50px 0 0 ${spacing.moSide};
+  }
 `;
 
 const Title = styled.h3`
