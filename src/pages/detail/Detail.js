@@ -2,16 +2,18 @@ import { useEffect, useState } from "react";
 import { movieDetail } from "../../api";
 import { TopTitle } from "../../components/TopTitle";
 import { Loading } from "../../components/Loading";
-import { Detailview } from "./components/Detailview";
+import { ViewDetail } from "./components/ViewDetail";
+import { useParams } from "react-router-dom";
 
 export const Detail = () => {
   const [detailData, setDetailData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const { id: movieId } = useParams();
 
   useEffect(() => {
     (async () => {
       try {
-        const data = await movieDetail(1022789);
+        const data = await movieDetail(movieId);
 
         setDetailData(data);
         setIsLoading(false);
@@ -21,7 +23,7 @@ export const Detail = () => {
     })();
   }, []);
 
-  console.log(detailData);
+  // console.log(detailData);
 
   return (
     <>
@@ -30,7 +32,7 @@ export const Detail = () => {
         <Loading />
       ) : (
         <>
-          <Detailview detailData={detailData} />
+          <ViewDetail detailData={detailData} />
         </>
       )}
     </>
