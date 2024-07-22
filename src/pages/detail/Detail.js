@@ -27,11 +27,11 @@ export const Detail = () => {
 
   return (
     <>
-      <TopTitle titleName={"Detail"} />
       {isLoading ? (
         <Loading />
       ) : (
         <>
+          <TopTitle titleName={detailData.title} />
           <ViewDetail detailData={detailData} />
         </>
       )}

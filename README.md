@@ -18,7 +18,7 @@
 - [x] styled-reset
 - [x] helmet-async
 - [x] swiper
+- [x] react-icons
 - [] font-awesome
 - [] react-hook-form
-- [] react-icons
 - []
