@@ -7,7 +7,7 @@
 - [x] 웹 폰트 설정
 - [x] Header, Footer 컴포넌트 구성
 - [x] Helmet
-- [] 각 페이지 UI 구성과 반응형
+- [x] 각 페이지 UI 구성과 반응형
 - [] Header scroll event
 - [] Deploy
 
@@ -21,4 +21,3 @@
 - [x] react-hook-form
 - [x] react-icons
 - [] font-awesome
-- []
