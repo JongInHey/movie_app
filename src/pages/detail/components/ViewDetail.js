@@ -1,4 +1,4 @@
-import { W500_URL } from "../../../constant/imgUrl";
+import { NOIMG_URL, W500_URL } from "../../../constant/imgUrl";
 import {
   Container,
   CoverImg,
@@ -12,7 +12,11 @@ export const ViewDetail = ({ detailData }) => {
   return (
     <Container>
       <CoverImg
-        src={`${W500_URL}${detailData.poster_path}`}
+        src={
+          detailData.poster_path === null
+            ? NOIMG_URL
+            : W500_URL + detailData.poster_path
+        }
         alt={detailData.title}
       />
       <ConWrap>
