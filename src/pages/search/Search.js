@@ -4,7 +4,10 @@ import styled from "styled-components";
 import { ImSearch } from "react-icons/im";
 import { spacing } from "../../GlobalStyle";
 import { searchMovie } from "../../api";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { W500_URL } from "../../constant/imgUrl";
+import { Loading } from "../../components/Loading";
 
 const Container = styled.div`
   padding: 150px ${spacing.side};
@@ -41,14 +44,32 @@ const ErrorMessage = styled.h4`
   color: lightgreen;
 `;
 
+const ConWrap = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 30px;
+  column-gap: 15px;
+`;
+
+const Con = styled.div``;
+
+const Bg = styled.div`
+  height: 450px;
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+
 export const Search = () => {
+  const [searchData, setSearchData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const [searchData, setSearchData] = useState();
 
   const onSearchResult = async (data) => {
     const { keyword } = data;
@@ -56,10 +77,12 @@ export const Search = () => {
       const { results: searchResult } = await searchMovie(keyword);
 
       setSearchData(searchResult);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
+
   console.log(searchData);
 
   return (
@@ -77,9 +100,37 @@ export const Search = () => {
           <button>
             <ImSearch />
           </button>
-
           <ErrorMessage>{errors?.keyword?.message}</ErrorMessage>
         </Form>
+
+        {searchData?.length === 0 ? (
+          <ErrorMessage>검색 결과가 없습니다..!</ErrorMessage>
+        ) : (
+          <>
+            {searchData && (
+              <ConWrap>
+                {isLoading ? (
+                  <Loading />
+                ) : (
+                  <>
+                    {searchData.map((data) => (
+                      <Con key={data.id}>
+                        <Link to={`/detail/${data.id}`}>
+                          <Bg>
+                            <img
+                              src={W500_URL + data.poster_path}
+                              alt={data.title}
+                            />
+                          </Bg>
+                        </Link>
+                      </Con>
+                    ))}
+                  </>
+                )}
+              </ConWrap>
+            )}
+          </>
+        )}
       </Container>
     </>
   );
