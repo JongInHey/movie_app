@@ -8,7 +8,7 @@
 - [x] Header, Footer 컴포넌트 구성
 - [x] Helmet
 - [x] 각 페이지 UI 구성과 반응형
-- [] Header scroll event
+- [x] Header scroll event
 - [] Deploy
 
 ## 설치 항목
@@ -20,4 +20,3 @@
 - [x] swiper
 - [x] react-hook-form
 - [x] react-icons
-- [] font-awesome

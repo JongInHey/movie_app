@@ -31,7 +31,7 @@ export const Home = () => {
     })();
   }, []);
 
-  console.log(nowData);
+  // console.log(nowData);
   // console.log(isLoading);
   // console.log(popData);
   // console.log(`평점 좋음 :  ${topData}`);
