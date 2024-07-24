@@ -26,7 +26,7 @@ const Container = styled.section`
   }
 
   @media screen and (max-width: 768px) {
-    padding: 550px ${spacing.moSide} 0 ${spacing.moSide};
+    padding: 530px ${spacing.moSide} 0 ${spacing.moSide};
 
     h3 {
       font-size: 40px;
