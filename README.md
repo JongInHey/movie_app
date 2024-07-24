@@ -9,7 +9,7 @@
 - [x] Helmet
 - [x] 각 페이지 UI 구성과 반응형
 - [x] Header scroll event
-- [] Deploy
+- [x] Deploy
 
 ## 설치 항목
 
